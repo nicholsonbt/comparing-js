@@ -31,7 +31,7 @@ COMPARE.Equals = function(a, b) {
 						return false;
 					} else {
 						for (var i=0; i < a.length; i++) {
-							if (!Equals(a[i], b[i])) {
+							if (!COMPARE.Equals(a[i], b[i])) {
 								return false;
 							}
 						}
@@ -42,11 +42,11 @@ COMPARE.Equals = function(a, b) {
 					let aKeys = SortedKeys(a);
 					let bKeys = SortedKeys(b);
 					
-					if (!Equals(aKeys, bKeys))
+					if (!COMPARE.Equals(aKeys, bKeys))
 						return false;
 					
 					for (let i = 0; i < aKeys.length; i++) {
-						if (!Equals(a[aKeys[i]], b[bKeys[i]])) {
+						if (!COMPARE.Equals(a[aKeys[i]], b[bKeys[i]])) {
 							return false;
 						}
 					}
