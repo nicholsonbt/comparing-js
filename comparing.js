@@ -56,13 +56,14 @@ COMPARE.Equals = function(a, b) {
 					return a.getTime() == b.getTime();
 					
 				default:
-					console.log("Unrecognised object:", (a.constructor));
-					return false;
+					for (let key of Object.keys(a))
+						if (!COMP.Equals(a[key], b[key]))
+							return false;
+					return true;
 			}
 
 			return true;
 		default:
-			console.log("Unrecognised type:", (typeof a));
 			return false;
 	}
 }
