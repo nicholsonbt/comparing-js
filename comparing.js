@@ -57,7 +57,7 @@ COMPARE.Equals = function(a, b) {
 					
 				default:
 					for (let key of Object.keys(a))
-						if (!COMP.Equals(a[key], b[key]))
+						if (!COMPARE.Equals(a[key], b[key]))
 							return false;
 					return true;
 			}
